@@ -1,8 +1,59 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Flaticon";
+  src: url("/fonts/Flaticon.eot");
+  src: url("/fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("/fonts/Flaticon.woff2") format("woff2"),
+       url("/fonts/Flaticon.woff") format("woff"),
+       url("/fonts/Flaticon.ttf") format("truetype"),
+       url("/fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("/fonts/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, 
+[class*=" flaticon-"]:before {   
+  font-family: Flaticon;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+@theme {
+  --color-primary: #FDBE33;
+  --color-secondary: #4a4c70;
+  --color-dark: #20212B;
+  --color-light: #f3f6ff;
+  --color-text: #777777;
+  --color-text-dark: #4a4c70;
+  --color-background: #ffffff;
+  --color-background-dark: #0a0a0a;
+  --color-background-light: #f3f6ff;
+  
+  --font-quicksand: 'Quicksand', sans-serif;
+
+  --shadow-custom: inset 0 0 0 0 #FDBE33;
+  --shadow-custom-hover: inset 0 0 0 30px #FDBE33;
 }
 
 @theme inline {
@@ -20,7 +71,61 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #777777;
+  font-weight: 500;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #4a4c70;
+}
+
+a {
+  color: #4a4c70;
+  transition: .3s;
+}
+
+a:hover,
+a:active,
+a:focus {
+  color: #FDBE33;
+  outline: none;
+  text-decoration: none;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  border-radius: 0;
+  background: #FDBE33;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  background: #20212B;
+  opacity: 1;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FDBE33;
+  background: rgba(256, 256, 256, .2);
+  height: 60px;
+  width: 60px;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #fff;
+  background: #FDBE33;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
 }
