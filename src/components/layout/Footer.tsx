@@ -1,11 +1,31 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaAngleRight, FaTwitter, FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa';
+import defaultData from '@/data/default/footerData';
+import type { FooterData } from '@/data/default/footerData';
 
-const Footer = () => {
+// Mapeamento de nomes de ícones para componentes de ícones
+const iconMap = {
+  FaTwitter,
+  FaFacebookF,
+  FaLinkedinIn,
+  FaInstagram,
+  FaYoutube
+};
+
+interface FooterProps {
+  data?: FooterData;
+}
+
+const Footer = ({ data = defaultData }: FooterProps) => {
   const currentYear = new Date().getFullYear();
+
+  // Função para renderizar o ícone correto com base no nome do ícone
+  const renderIcon = (iconName: string) => {
+    const IconComponent = iconMap[iconName as keyof typeof iconMap];
+    return IconComponent ? <IconComponent className="inline-block" /> : null;
+  };
 
   return (
     <footer className="relative mt-[45px] pt-[90px] bg-dark">
@@ -16,104 +36,56 @@ const Footer = () => {
             <h2 className="mb-[30px] text-xl font-bold text-primary">Nosso Contato</h2>
             <p className="text-white mb-2">
               <FaMapMarkerAlt className="inline-block w-[25px] text-white mr-2" />
-              123 Rua Principal, São Paulo, SP
+              {data.contactInfo.address}
             </p>
             <p className="text-white mb-2">
               <FaPhoneAlt className="inline-block w-[25px] text-white mr-2" />
-              +55 11 1234-5678
+              {data.contactInfo.phone}
             </p>
             <p className="text-white mb-6">
               <FaEnvelope className="inline-block w-[25px] text-white mr-2" />
-              info@caridade.org.br
+              {data.contactInfo.email}
             </p>
             <div className="mt-5">
-              <a href="#" className="inline-flex items-center justify-center w-[40px] h-[40px] mr-1 mb-2 text-primary border border-primary rounded-none hover:bg-primary hover:text-white transition-all">
-                <FaTwitter />
-              </a>
-              <a href="#" className="inline-flex items-center justify-center w-[40px] h-[40px] mx-1 mb-2 text-primary border border-primary rounded-none hover:bg-primary hover:text-white transition-all">
-                <FaFacebookF />
-              </a>
-              <a href="#" className="inline-flex items-center justify-center w-[40px] h-[40px] mx-1 mb-2 text-primary border border-primary rounded-none hover:bg-primary hover:text-white transition-all">
-                <FaLinkedinIn />
-              </a>
-              <a href="#" className="inline-flex items-center justify-center w-[40px] h-[40px] mx-1 mb-2 text-primary border border-primary rounded-none hover:bg-primary hover:text-white transition-all">
-                <FaInstagram />
-              </a>
-              <a href="#" className="inline-flex items-center justify-center w-[40px] h-[40px] mx-1 mb-2 text-primary border border-primary rounded-none hover:bg-primary hover:text-white transition-all">
-                <FaYoutube />
-              </a>
+              {data.socialLinks.map((link) => (
+                <a 
+                  key={link.id}
+                  href={link.url}
+                  className="inline-flex items-center justify-center w-[40px] h-[40px] mx-1 mb-2 text-primary border border-primary rounded-none hover:bg-primary hover:text-white transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.platform}
+                >
+                  {renderIcon(link.icon)}
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Footer Links */}
-          <div className="mb-[45px]">
-            <h2 className="mb-[30px] text-xl font-bold text-primary">Links Rápidos</h2>
-            <div className="flex flex-col">
-              <Link href="/" className="mb-2.5 text-white hover:text-primary hover:tracking-wider transition-all before:content-['\f105'] before:font-['Font_Awesome_5_Free'] before:font-bold before:mr-2.5">
-                <FaAngleRight className="inline-block mr-2" />Página Inicial
-              </Link>
-              <Link href="/about" className="mb-2.5 text-white hover:text-primary hover:tracking-wider transition-all">
-                <FaAngleRight className="inline-block mr-2" />Sobre Nós
-              </Link>
-              <Link href="/causes" className="mb-2.5 text-white hover:text-primary hover:tracking-wider transition-all">
-                <FaAngleRight className="inline-block mr-2" />Nossas Causas
-              </Link>
-              <Link href="/event" className="mb-2.5 text-white hover:text-primary hover:tracking-wider transition-all">
-                <FaAngleRight className="inline-block mr-2" />Eventos
-              </Link>
-              <Link href="/blog" className="mb-2.5 text-white hover:text-primary hover:tracking-wider transition-all">
-                <FaAngleRight className="inline-block mr-2" />Blog
-              </Link>
-              <Link href="/volunteer" className="mb-2.5 text-white hover:text-primary hover:tracking-wider transition-all">
-                <FaAngleRight className="inline-block mr-2" />Voluntariado
-              </Link>
-              <Link href="/donate" className="mb-2.5 text-white hover:text-primary hover:tracking-wider transition-all">
-                <FaAngleRight className="inline-block mr-2" />Doações
-              </Link>
-              <Link href="/contact" className="mb-2.5 text-white hover:text-primary hover:tracking-wider transition-all">
-                <FaAngleRight className="inline-block mr-2" />Contato
-              </Link>
-            </div>
-          </div>
-
-          {/* Footer Posts */}
-          <div className="mb-[45px]">
-            <h2 className="mb-[30px] text-xl font-bold text-primary">Posts Populares</h2>
-            <div className="flex mb-5">
-              <Image src="/img/blog-1.jpg" alt="Post Popular" width={80} height={80} className="w-[80px] h-auto" />
-              <div className="pl-4">
-                <Link href="/blog" className="block text-white hover:text-primary text-base font-semibold">
-                  Como pequenas doações transformam vidas
-                </Link>
-                <div className="flex mt-2">
-                  <p className="m-0 text-sm text-white">
-                    <small>Por </small>
-                    <Link href="#" className="text-white hover:text-primary">Admin</Link>
-                  </p>
-                </div>
+          {/* Footer Columns */}
+          {data.columns.map((column, index) => (
+            <div className="mb-[45px]" key={index}>
+              <h2 className="mb-[30px] text-xl font-bold text-primary">{column.title}</h2>
+              <div className="flex flex-col">
+                {column.links.map((link) => (
+                  <Link 
+                    key={link.id}
+                    href={link.url} 
+                    className="mb-2.5 text-white hover:text-primary hover:tracking-wider transition-all"
+                  >
+                    <FaAngleRight className="inline-block mr-2" />
+                    {link.text}
+                  </Link>
+                ))}
               </div>
             </div>
-            <div className="flex">
-              <Image src="/img/blog-2.jpg" alt="Post Popular" width={80} height={80} className="w-[80px] h-auto" />
-              <div className="pl-4">
-                <Link href="/blog" className="block text-white hover:text-primary text-base font-semibold">
-                  O papel da educação no combate à pobreza
-                </Link>
-                <div className="flex mt-2">
-                  <p className="m-0 text-sm text-white">
-                    <small>Por </small>
-                    <Link href="#" className="text-white hover:text-primary">Admin</Link>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
 
           {/* Footer Newsletter */}
           <div className="mb-[45px]">
             <h2 className="mb-[30px] text-xl font-bold text-primary">Newsletter</h2>
             <p className="text-white mb-6">
-              Inscreva-se para receber notícias e atualizações sobre nossos projetos e campanhas.
+              {data.description}
             </p>
             <form>
               <div className="mb-4">
@@ -148,7 +120,7 @@ const Footer = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <p className="m-0 text-gray-400">
-                  &copy; {currentYear} <Link href="/" className="text-white hover:text-primary">Caridade</Link>. Todos os Direitos Reservados.
+                  &copy; {currentYear} {data.copyright}
                 </p>
               </div>
               <div className="md:text-right">

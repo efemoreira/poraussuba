@@ -1,6 +1,6 @@
 import MainLayout from '@/components/layout/MainLayout';
 import PageHeader from '@/components/common/PageHeader';
-import Newsletter from '@/components/common/Newsletter';
+import Newsletter from '@/components/home/Newsletter';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react';

@@ -2,40 +2,49 @@
 
 import { useState, useRef } from 'react';
 import Image from 'next/image';
-import { Tab } from '@headlessui/react';
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import defaultData, { AboutData } from '@/data/default/aboutData';
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-const AboutSection = () => {
-  const [categories] = useState({
-    'Nossa Missão': [
-      {
-        id: 1,
-        content: `Nossa missão é fornecer ajuda humanitária para crianças, adultos e famílias em situação de vulnerabilidade. 
-                  Trabalhamos para criar oportunidades, levar esperança e transformar vidas através de programas educacionais, 
-                  assistência médica e apoio comunitário.`,
-      },
-    ],
-    'Nossa Visão': [
-      {
-        id: 1,
-        content: `Buscamos um mundo onde todas as pessoas tenham acesso a necessidades básicas, oportunidades de desenvolvimento 
-                  e possam viver com dignidade. Acreditamos em construir uma sociedade mais justa e igualitária, onde ninguém seja 
-                  deixado para trás.`,
-      },
-    ],
-    'Nossos Valores': [
-      {
-        id: 1,
-        content: `Nossos valores fundamentais incluem respeito pela dignidade humana, transparência em nossas ações, 
-                  responsabilidade com nossos doadores e beneficiários, eficiência na gestão de recursos e comprometimento 
-                  com resultados de longo prazo que promovam mudanças duradouras.`,
-      },
-    ],
-  });
+interface AboutSectionProps {
+  data?: AboutData;
+}
+
+// Componente para exibir os itens de conquistas
+const AchievementsList = ({ achievements, achievementTitle }: { achievementTitle: string; achievements: string[] }) => (
+  <div className="mt-8">
+    <p className="font-medium mb-4">
+      {achievementTitle}
+    </p>
+    <ul className="space-y-2">
+      {achievements.map((achievement, index) => (
+        <li key={index} className="flex items-center">
+          <span className="mr-2 text-primary">&#10003;</span>
+          <span>{achievement}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
+// Componente para o botão de ação
+const ActionButton = ({ link, text }: { link: string; text: string }) => (
+  <div className="mt-8">
+    <a 
+      href={link}
+      className="inline-block px-6 py-3 border-2 border-primary text-text hover:bg-primary hover:text-dark transition-all duration-300"
+    >
+      {text}
+    </a>
+  </div>
+);
+
+const AboutSection = ({ data = defaultData }: AboutSectionProps) => {
+  const [categories] = useState(data.tabs);
 
   // Referência para a seção de parallax
   const sectionRef = useRef(null);
@@ -47,7 +56,7 @@ const AboutSection = () => {
   });
   
   // Transforma o valor de scroll em movimento vertical para a imagem
-  const imageY = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+  const imageY = useTransform(scrollYProgress, [0, 1], ["-30%", "30%"]);
 
   return (
     <section ref={sectionRef} className="relative w-full py-4">
@@ -60,8 +69,8 @@ const AboutSection = () => {
                 style={{ y: imageY }}
               >
                 <Image
-                  src="/img/about.jpg"
-                  alt="Sobre nossa organização"
+                  src={data.imagePath}
+                  alt={data.imageAlt}
                   fill
                   className="object-cover"
                 />
@@ -76,13 +85,13 @@ const AboutSection = () => {
               transition={{ duration: 0.8 }}
               className="mb-8"
             >
-              <p className="mb-1 relative text-xl lg:text-2xl font-semibold text-primary">Sobre Nós</p>
-              <h2 className="text-3xl lg:text-[45px] font-bold text-textDark">Ajudando os não privilegiados há 20 anos</h2>
+              <p className="mb-1 relative text-xl lg:text-2xl font-semibold text-primary">{data.title}</p>
+              <h2 className="text-3xl lg:text-[45px] font-bold text-textDark">{data.subtitle}</h2>
             </motion.div>
             
             <div className="w-full">
-              <Tab.Group>
-                <Tab.List className="flex border-b border-gray-200">
+              <TabGroup>
+                <TabList className="flex border-b border-gray-200">
                   {Object.keys(categories).map((category) => (
                     <Tab
                       key={category}
@@ -91,17 +100,17 @@ const AboutSection = () => {
                           'w-1/3 py-2 font-semibold text-textDark focus:outline-none',
                           selected
                             ? 'text-primary border-b-3 border-primary'
-                            : 'hover:text-primary'
+                            : 'hover:text-primary hover:border-b-3 hover:border-primary'
                         )
                       }
                     >
                       {category}
                     </Tab>
                   ))}
-                </Tab.List>
-                <Tab.Panels className="mt-6">
+                </TabList>
+                <TabPanels className="mt-6">
                   {Object.values(categories).map((posts, idx) => (
-                    <Tab.Panel
+                    <TabPanel
                       key={idx}
                       className="ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none"
                     >
@@ -110,43 +119,14 @@ const AboutSection = () => {
                           <p className="text-base leading-relaxed">
                             {post.content}
                           </p>
-                          <div className="mt-8">
-                            <p className="font-medium mb-4">
-                              Ao longo dos anos, nossa organização alcançou:
-                            </p>
-                            <ul className="space-y-2">
-                              <li className="flex items-center">
-                                <span className="mr-2 text-primary">&#10003;</span>
-                                <span>Mais de 10.000 crianças beneficiadas</span>
-                              </li>
-                              <li className="flex items-center">
-                                <span className="mr-2 text-primary">&#10003;</span>
-                                <span>Centenas de comunidades assistidas</span>
-                              </li>
-                              <li className="flex items-center">
-                                <span className="mr-2 text-primary">&#10003;</span>
-                                <span>Programas educacionais reconhecidos</span>
-                              </li>
-                              <li className="flex items-center">
-                                <span className="mr-2 text-primary">&#10003;</span>
-                                <span>Transparência e eficiência na gestão de recursos</span>
-                              </li>
-                            </ul>
-                          </div>
-                          <div className="mt-8">
-                            <a 
-                              href="/about" 
-                              className="inline-block px-6 py-3 border-2 border-primary text-text hover:bg-primary hover:text-dark transition-all duration-300"
-                            >
-                              Saiba Mais
-                            </a>
-                          </div>
+                          <AchievementsList achievements={data.achievements} achievementTitle={data.achievementTitle} />
+                          <ActionButton link={data.buttonLink} text={data.buttonText} />
                         </div>
                       ))}
-                    </Tab.Panel>
+                    </TabPanel>
                   ))}
-                </Tab.Panels>
-              </Tab.Group>
+                </TabPanels>
+              </TabGroup>
             </div>
           </div>
         </div>

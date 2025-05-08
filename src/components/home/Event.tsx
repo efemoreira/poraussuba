@@ -4,29 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaCalendarAlt, FaClock, FaMapMarkerAlt } from 'react-icons/fa';
+import defaultData, { EventSectionData } from '@/data/default/eventData';
 
-const events = [
-  {
-    id: 1,
-    title: 'Campanha de arrecadação de alimentos',
-    description: 'Participe da nossa campanha de arrecadação de alimentos para famílias em situação de vulnerabilidade. Sua doação pode fazer a diferença na vida de muitas pessoas.',
-    image: '/img/event-1.jpg',
-    date: '15 Junho 2025',
-    time: '8:00 - 17:00',
-    location: 'Centro Comunitário, São Paulo',
-  },
-  {
-    id: 2,
-    title: 'Evento de conscientização ambiental',
-    description: 'Junte-se a nós neste evento de conscientização ambiental para promover práticas sustentáveis. Haverá palestras, oficinas e atividades para todas as idades.',
-    image: '/img/event-2.jpg',
-    date: '22 Junho 2025',
-    time: '10:00 - 16:00',
-    location: 'Parque Municipal, Rio de Janeiro',
-  },
-];
+interface EventSectionProps {
+  data?: EventSectionData;
+}
 
-const EventSection = () => {
+const EventSection = ({ data = defaultData }: EventSectionProps) => {
   return (
     <section className="relative w-full py-[45px] pb-[15px] px-4 lg:px-[60px]">
       <div className="container mx-auto">
@@ -36,12 +20,12 @@ const EventSection = () => {
           transition={{ duration: 0.8 }}
           className="max-w-[700px] mx-auto text-center mb-12"
         >
-          <p className="mb-1 text-xl lg:text-2xl font-semibold text-primary">Próximos Eventos</p>
-          <h2 className="text-3xl lg:text-[45px] font-bold text-textDark">Participe dos nossos eventos e ações sociais</h2>
+          <p className="mb-1 text-xl lg:text-2xl font-semibold text-primary">{data.sectionTitle}</p>
+          <h2 className="text-3xl lg:text-[45px] font-bold text-textDark">{data.sectionSubtitle}</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {events.map((event, index) => (
+          {data.events.map((event, index) => (
             <motion.div
               key={event.id}
               initial={{ opacity: 0, y: 20 }}
@@ -50,7 +34,7 @@ const EventSection = () => {
               className="mb-8 bg-light"
             >
               <Image
-                src={event.image}
+                src={event.imagePath}
                 alt={event.title}
                 width={600}
                 height={300}
@@ -58,17 +42,17 @@ const EventSection = () => {
               />
               
               <div className="p-[30px] flex flex-col md:flex-row">
-                <div className="flex flex-row md:flex-col mb-4 md:mb-0">
+                <div className="flex flex-row md:flex-col mb-4 md:mb-0 w-2/5">
                   <div className="relative whitespace-nowrap border-b border-gray-200 pb-2 mb-2 md:mr-0 mr-4">
-                    <FaCalendarAlt className="inline-block mr-2.5 text-secondary" />
+                    <FaCalendarAlt className="inline-block mr-2.5 text-textDark" />
                     <span>{event.date}</span>
                   </div>
                   <div className="relative whitespace-nowrap border-b border-gray-200 pb-2 mb-2 md:mr-0 mr-4">
-                    <FaClock className="inline-block mr-2.5 text-secondary" />
+                    <FaClock className="inline-block mr-2.5 text-textDark" />
                     <span>{event.time}</span>
                   </div>
-                  <div className="relative whitespace-nowrap">
-                    <FaMapMarkerAlt className="inline-block mr-2.5 text-secondary" />
+                  <div className="relative ">
+                    <FaMapMarkerAlt className="inline-block mr-2.5 text-textDark" />
                     <span>{event.location}</span>
                   </div>
                 </div>
@@ -77,10 +61,10 @@ const EventSection = () => {
                   <h3 className="text-2xl lg:text-3xl font-bold mb-2.5 text-textDark">{event.title}</h3>
                   <p className="text-text mb-5">{event.description}</p>
                   <Link
-                    href="/event"
+                    href={event.buttonLink}
                     className="inline-block px-6 py-2 border-2 border-primary hover:bg-primary hover:text-white transition-all duration-300"
                   >
-                    Saiba Mais
+                    {event.buttonText}
                   </Link>
                 </div>
               </div>

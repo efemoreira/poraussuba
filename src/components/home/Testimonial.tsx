@@ -4,46 +4,23 @@ import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { motion } from 'framer-motion';
+import defaultData from '@/data/default/testimonialData';
+import type { TestimonialData } from '@/data/default/testimonialData';
 
 // Importar estilos do Swiper
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const testimonials = [
-  {
-    id: 1,
-    name: 'Miguel Pereira',
-    position: 'Beneficiado pelo programa de educação',
-    image: '/img/testimonial-1.jpg',
-    text: 'Graças ao programa de bolsas de estudo desta organização, consegui completar minha formação superior e hoje trabalho como professor. Sem esta ajuda, jamais teria alcançado meu sonho de fazer faculdade.',
-  },
-  {
-    id: 2,
-    name: 'Sofia Mendes',
-    position: 'Mãe beneficiada pelo programa de saúde',
-    image: '/img/testimonial-2.jpg',
-    text: 'Meu filho precisava de um tratamento médico especializado que seria impossível para nossa família custear. A organização nos apoiou completamente, e hoje meu filho está saudável e feliz novamente.',
-  },
-  {
-    id: 3,
-    name: 'Roberto Almeida',
-    position: 'Morador de comunidade assistida',
-    image: '/img/testimonial-3.jpg',
-    text: 'Após a enchente que destruiu nossa comunidade, ficamos sem nada. A equipe chegou rapidamente com alimentos, água potável e material para reconstrução. Nunca vou esquecer o carinho e dedicação desses voluntários.',
-  },
-  {
-    id: 4,
-    name: 'Carla Ferreira',
-    position: 'Beneficiada pelo programa de moradia',
-    image: '/img/testimonial-4.jpg',
-    text: 'Por anos vivemos em condições precárias, com teto que deixava entrar água da chuva. O programa de moradia nos ajudou a reformar nossa casa, e agora temos um lar seguro e digno para criar nossos filhos.',
-  },
-];
+interface TestimonialSectionProps {
+  data?: TestimonialData;
+}
 
-const TestimonialSection = () => {
+const TestimonialSection = ({ data = defaultData }: TestimonialSectionProps) => {
   return (
-    <section className="relative w-full py-[45px] px-4 lg:px-[60px]">
+    <section className={`relative w-full py-[45px] px-4 lg:px-[60px] ${data.bgImagePath ? 'bg-cover bg-center bg-no-repeat' : ''}`}
+      style={data.bgImagePath ? { backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${data.bgImagePath})` } : {}}
+    >
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,8 +28,10 @@ const TestimonialSection = () => {
           transition={{ duration: 0.8 }}
           className="max-w-[700px] mx-auto text-center mb-12"
         >
-          <p className="mb-1 text-xl lg:text-2xl font-semibold text-primary">Depoimentos</p>
-          <h2 className="text-3xl lg:text-[45px] font-bold text-textDark">O que as pessoas dizem sobre nossa organização</h2>
+          <p className={`mb-1 text-xl lg:text-2xl font-semibold text-primary`}>{data.sectionTitle}</p>
+          <h2 className={`text-3xl lg:text-[45px] font-bold ${data.bgImagePath ? 'text-white' : 'text-textDark'}`}>
+            {data.sectionSubtitle}
+          </h2>
         </motion.div>
 
         <div className="relative -mx-4">
@@ -74,31 +53,35 @@ const TestimonialSection = () => {
             }}
             className="px-4 pb-16"
           >
-            {testimonials.map((testimonial) => (
+            {data.testimonials.map((testimonial) => (
               <SwiperSlide key={testimonial.id}>
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="flex flex-col overflow-hidden"
+                  className={`flex flex-col overflow-hidden ${data.bgImagePath ? 'bg-white/10 backdrop-blur-sm' : ''} p-4 rounded`}
                 >
                   <div className="flex items-center border-b border-gray-200 pb-4 mb-4">
                     <Image
-                      src={testimonial.image}
+                      src={testimonial.imagePath}
                       alt={testimonial.name}
                       width={80}
                       height={80}
-                      className="mb-[-1px]"
+                      className="mb-[-1px] rounded-full"
                     />
                     
                     <div className="pl-4 w-[calc(100%-95px)]">
-                      <h3 className="text-xl font-semibold mb-1 text-textDark">{testimonial.name}</h3>
-                      <p className="m-0 italic text-text">{testimonial.position}</p>
+                      <h3 className={`text-xl font-semibold mb-1 ${data.bgImagePath ? 'text-white' : 'text-textDark'}`}>
+                        {testimonial.name}
+                      </h3>
+                      <p className={`m-0 italic ${data.bgImagePath ? 'text-white/80' : 'text-text'}`}>
+                        {testimonial.role}
+                      </p>
                     </div>
                   </div>
                   
                   <div className="testimonial-text">
-                    <p className="text-text">{testimonial.text}</p>
+                    <p className={`${data.bgImagePath ? 'text-white' : 'text-text'}`}>{testimonial.content}</p>
                   </div>
                 </motion.div>
               </SwiperSlide>
