@@ -8,11 +8,11 @@ export interface NewsletterData {
 }
 
 const newsletterData: NewsletterData = {
-  title: "Mantenha-se Informado",
-  subtitle: "Inscreva-se em nossa newsletter para receber atualizações sobre nossa campanha de assinaturas e novidades da lei proposta.",
+  title: "Acompanhe Nossa Campanha",
+  subtitle: "Inscreva-se para receber atualizações sobre nossa meta de 88.500 assinaturas e informações sobre os próximos eventos de coleta em Fortaleza.",
   buttonText: "Inscrever-se",
   placeholderText: "Seu endereço de e-mail",
-  termsText: "Concordo em receber emails de atualização sobre a campanha",
+  termsText: "Concordo em receber atualizações sobre a campanha Poraussuba por saúde nas escolas de Fortaleza",
   bgImagePath: "/img/page-header.jpg"
 };
 

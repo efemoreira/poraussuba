@@ -32,7 +32,7 @@ const navBarData: NavBarData = {
     },
     {
       id: 3,
-      label: "Causas",
+      label: "Projeto de Lei",
       path: "/causes",
       hasDropdown: false
     },
@@ -44,30 +44,30 @@ const navBarData: NavBarData = {
       dropdownItems: [
         {
           id: 1,
-          label: "Eventos Futuros",
+          label: "Coleta de Assinaturas",
           path: "/events/upcoming"
         },
         {
           id: 2,
-          label: "Eventos Passados",
+          label: "Palestras sobre o Projeto",
           path: "/events/past"
         }
       ]
     },
     {
       id: 5,
-      label: "Blog",
+      label: "Atualizações",
       path: "#",
       hasDropdown: true,
       dropdownItems: [
         {
           id: 1,
-          label: "Notícias",
+          label: "Status da Campanha",
           path: "/blog/news"
         },
         {
           id: 2,
-          label: "Artigos",
+          label: "Artigos sobre Saúde Escolar",
           path: "/blog/articles"
         }
       ]
@@ -76,6 +76,12 @@ const navBarData: NavBarData = {
       id: 6,
       label: "Contato",
       path: "/contact",
+      hasDropdown: false
+    },
+    {
+      id: 7,
+      label: "Assinar",
+      path: "/donate",
       hasDropdown: false
     }
   ]

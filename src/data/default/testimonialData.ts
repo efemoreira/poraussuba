@@ -20,30 +20,30 @@ const testimonialData: TestimonialData = {
   testimonials: [
     {
       id: 1,
-      name: "Marta Silva",
-      role: "Professora",
-      content: "Como educadora, acredito no poder da transparência para transformar nossa democracia. Assinar essa proposta foi uma forma de contribuir para um Brasil melhor para as futuras gerações.",
+      name: "Dra. Ana Sousa",
+      role: "Pediatra",
+      content: "Como médica, vejo diariamente como a falta de acompanhamento preventivo afeta a saúde das crianças. Esta lei de iniciativa popular pode transformar a saúde infantil em Fortaleza, identificando problemas precocemente.",
       imagePath: "/img/testimonial-1.jpg"
     },
     {
       id: 2,
-      name: "Carlos Ferreira",
-      role: "Empresário",
-      content: "O setor privado também ganha com mais transparência na gestão pública. Esta iniciativa representa um passo importante para criar um ambiente de negócios mais justo e previsível no Brasil.",
+      name: "Francisco Oliveira",
+      role: "Diretor de Escola Municipal",
+      content: "Em nossa escola, muitos alunos faltam às aulas por problemas de saúde que poderiam ser evitados com acompanhamento regular. Ter profissionais de saúde mensalmente na escola seria revolucionário.",
       imagePath: "/img/testimonial-2.jpg"
     },
     {
       id: 3,
-      name: "Júlia Mendonça",
-      role: "Estudante de Direito",
-      content: "Como futura advogada, reconheço a importância de mecanismos legais que fortaleçam a participação cidadã. Esta proposta tem potencial para revolucionar o controle social no país.",
+      name: "Júlia Mendes",
+      role: "Mãe de aluno",
+      content: "Como mãe que trabalha o dia todo, é difícil levar meu filho regularmente ao médico. Saber que ele teria acompanhamento de saúde na própria escola me traria muita tranquilidade.",
       imagePath: "/img/testimonial-3.jpg"
     },
     {
       id: 4,
-      name: "Roberto Alves",
-      role: "Aposentado",
-      content: "Após décadas vendo como a falta de transparência prejudica nosso país, finalmente temos uma iniciativa concreta para mudar isso. Assinei com orgulho e estou divulgando para todos os meus contatos.",
+      name: "Prof. Roberto Alves",
+      role: "Nutricionista",
+      content: "A obesidade infantil é um problema crescente em Fortaleza. Um acompanhamento nutricional regular nas escolas pode mudar esse cenário e criar hábitos saudáveis que durarão toda a vida.",
       imagePath: "/img/testimonial-4.jpg"
     }
   ]

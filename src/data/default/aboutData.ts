@@ -21,41 +21,43 @@ export interface AboutData {
 
 const aboutData: AboutData = {
   title: 'Sobre Nós',
-  subtitle: 'Ajudando os não privilegiados há 20 anos',
+  subtitle: 'Uma iniciativa popular por melhor saúde nas escolas de Fortaleza',
   imagePath: '/img/about.jpg',
-  imageAlt: 'Sobre nossa organização',
+  imageAlt: 'Sobre o projeto Poraussuba',
   tabs: {
     'Nossa Missão': [
       {
         id: 1,
-        content: `Nossa missão é fornecer ajuda humanitária para crianças, adultos e famílias em situação de vulnerabilidade. 
-                Trabalhamos para criar oportunidades, levar esperança e transformar vidas através de programas educacionais, 
-                assistência médica e apoio comunitário.`,
+        content: `Nossa missão é mobilizar os cidadãos de Fortaleza para aprovar uma lei de iniciativa popular que 
+                estabeleça a realização mensal de ações de saúde nas escolas públicas municipais. Queremos demonstrar 
+                que a população tem força para criar mudanças sem depender exclusivamente de políticos.`,
       },
     ],
     'Nossa Visão': [
       {
         id: 1,
-        content: `Buscamos um mundo onde todas as pessoas tenham acesso a necessidades básicas, oportunidades de desenvolvimento 
-                e possam viver com dignidade. Acreditamos em construir uma sociedade mais justa e igualitária, onde ninguém seja 
-                deixado para trás.`,
+        content: `Buscamos uma Fortaleza onde as crianças recebam acompanhamento médico regular nas escolas, 
+                com nutricionistas, endocrinologistas e outros profissionais de saúde monitorando seu desenvolvimento. 
+                Acreditamos que esta iniciativa pode transcender disputas políticas entre esquerda e direita, 
+                unindo a população em torno do bem-estar infantil.`,
       },
     ],
     'Nossos Valores': [
       {
         id: 1,
-        content: `Nossos valores fundamentais incluem respeito pela dignidade humana, transparência em nossas ações, 
-                responsabilidade com nossos doadores e beneficiários, eficiência na gestão de recursos e comprometimento 
-                com resultados de longo prazo que promovam mudanças duradouras.`,
+        content: `Nossos valores fundamentais incluem participação cidadã, transparência no processo democrático, 
+                cuidado com a saúde infantil, e a crença de que o povo pode e deve ser protagonista das mudanças 
+                sociais que deseja ver. Rejeitamos o populismo e as polarizações políticas em favor da ação direta 
+                e colaborativa.`,
       },
     ],
   },
-  achievementTitle: 'Nossas Conquistas',
+  achievementTitle: 'Nosso Progresso',
   achievements: [
-    'Mais de 10.000 crianças beneficiadas',
-    'Centenas de comunidades assistidas',
-    'Programas educacionais reconhecidos',
-    'Transparência e eficiência na gestão de recursos'
+    'Projeto de lei estruturado e validado juridicamente',
+    'Plataforma de mobilização digital desenvolvida',
+    'Parcerias com profissionais de saúde estabelecidas',
+    'Rede de voluntários em formação'
   ],
   buttonText: 'Saiba Mais',
   buttonLink: '/about'

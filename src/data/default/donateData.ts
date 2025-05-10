@@ -23,28 +23,28 @@ export interface DonateData {
 }
 
 const donateData: DonateData = {
-  sectionTitle: 'Assine Agora',
-  sectionSubtitle: 'Sua Assinatura Pode Mudar o Brasil',
-  description: 'Junte-se a milhares de brasileiros que já assinaram nossa petição. Precisamos do seu apoio para transformar esta iniciativa em lei e garantir um futuro melhor para nosso país. Cada assinatura fortalece nosso movimento e aproxima-nos de nosso objetivo.',
+  sectionTitle: 'Assine Nossa Petição',
+  sectionSubtitle: 'Sua Assinatura por Saúde nas Escolas de Fortaleza',
+  description: 'O projeto Poraussuba, idealizado por Felipe Moreira, busca protocolar uma lei de iniciativa popular que estabelece a realização de ações mensais de saúde nas escolas públicas de Fortaleza, garantindo o acompanhamento de nutricionistas, endocrinologistas e outros profissionais para monitorar o desenvolvimento das crianças. Precisamos de 88.500 assinaturas (5% dos eleitores de Fortaleza) para protocolar esta proposta na Câmara Municipal. Ao assinar, você ajuda a mostrar que o povo não precisa esperar pelos políticos e pode superar a polarização entre esquerda e direita através da participação cidadã direta.',
   imagePath: '/img/donate.jpg',
-  imageAlt: 'Formulário de assinatura',
+  imageAlt: 'Formulário de assinatura da petição Poraussuba',
   formTitle: 'Formulário de Assinatura',
-  signatureGoal: 10000,
-  currentSignatures: 7534,
+  signatureGoal: 88500,
+  currentSignatures: 12345,
   submitButtonText: 'Assinar Petição',
-  termsText: 'Ao assinar, concordo com os termos de uso e política de privacidade.',
+  termsText: 'Ao assinar, concordo com os termos de uso e política de privacidade. Sou eleitor(a) em Fortaleza e confirmo que os dados informados são verdadeiros.',
   signatureOptions: [
     {
-      label: 'Assinatura Digital',
-      description: 'Assine usando seu certificado digital ou e-mail verificado'
+      label: 'Pré-cadastro Online',
+      description: 'Preencha seus dados para facilitar a coleta da sua assinatura física posteriormente'
     },
     {
-      label: 'Assinatura Física',
-      description: 'Imprima o documento, assine e envie por correio'
+      label: 'Ponto de Coleta',
+      description: 'Visite um dos nossos pontos de coleta em Fortaleza para assinar presencialmente'
     },
     {
-      label: 'Assinatura Presencial',
-      description: 'Visite um dos nossos pontos de coleta para assinar presencialmente'
+      label: 'Voluntário Coletor',
+      description: 'Solicite que um voluntário vá até você para coletar sua assinatura'
     }
   ],
   personalInfoFields: [
@@ -52,42 +52,49 @@ const donateData: DonateData = {
       id: 'nome',
       label: 'Nome Completo',
       type: 'text',
-      placeholder: 'Digite seu nome completo',
+      placeholder: 'Digite seu nome completo conforme título de eleitor',
       required: true
     },
     {
       id: 'email',
       label: 'Email',
       type: 'email',
-      placeholder: 'Digite seu email',
-      required: true
-    },
-    {
-      id: 'cpf',
-      label: 'CPF',
-      type: 'text',
-      placeholder: 'Digite seu CPF',
+      placeholder: 'Digite seu email para contato',
       required: true
     },
     {
       id: 'telefone',
-      label: 'Telefone',
+      label: 'Telefone/WhatsApp',
       type: 'tel',
-      placeholder: 'Digite seu telefone',
-      required: false
+      placeholder: 'Digite seu telefone para contato',
+      required: true
+    },
+    {
+      id: 'endereco',
+      label: 'Endereço Completo',
+      type: 'text',
+      placeholder: 'Digite seu endereço completo',
+      required: true
+    },
+    {
+      id: 'bairro',
+      label: 'Bairro',
+      type: 'text',
+      placeholder: 'Digite seu bairro em Fortaleza',
+      required: true
     },
     {
       id: 'cidade',
       label: 'Cidade',
       type: 'text',
-      placeholder: 'Digite sua cidade',
+      placeholder: 'Fortaleza',
       required: true
     },
     {
       id: 'estado',
       label: 'Estado',
       type: 'text',
-      placeholder: 'Digite seu estado',
+      placeholder: 'Ceará',
       required: true
     }
   ]

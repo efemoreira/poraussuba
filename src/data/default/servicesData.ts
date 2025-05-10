@@ -17,38 +17,38 @@ const servicesData: ServicesData = {
   services: [
     {
       id: 1,
-      title: 'Transparência na Gestão Pública',
-      description: 'Nossa proposta estabelece mecanismos mais rigorosos para garantir transparência nos gastos e decisões governamentais, facilitando o acesso do cidadão às informações públicas.',
+      title: 'Atendimento Nutricional',
+      description: 'Acompanhamento mensal por nutricionistas nas escolas públicas para monitorar o desenvolvimento e combater problemas como obesidade e desnutrição infantil.',
       icon: 'health'
     },
     {
       id: 2,
-      title: 'Participação Cidadã',
-      description: 'Fortalecimento dos instrumentos de democracia participativa, permitindo maior envolvimento da população nas decisões políticas que afetam diretamente suas vidas.',
+      title: 'Avaliação Endocrinológica',
+      description: 'Endocrinologistas acompanhando o crescimento e desenvolvimento hormonal das crianças, identificando precocemente possíveis distúrbios.',
       icon: 'education'
     },
     {
       id: 3,
-      title: 'Responsabilidade Fiscal',
-      description: 'Estabelecimento de limites mais rígidos para gastos públicos e utilização de recursos, promovendo maior responsabilidade na gestão financeira governamental.',
+      title: 'Prevenção em Saúde',
+      description: 'Ações preventivas mensais para identificar problemas de saúde antes que se agravem, garantindo o bem-estar e desenvolvimento adequado das crianças.',
       icon: 'housing'
     },
     {
       id: 4,
-      title: 'Combate à Corrupção',
-      description: 'Implementação de mecanismos mais eficientes para identificar e punir práticas de corrupção, com processos mais ágeis e punições mais severas.',
+      title: 'Saúde Escolar Integral',
+      description: 'Atendimento médico regular dentro do ambiente escolar, facilitando o acesso à saúde e reduzindo a evasão por problemas de saúde não tratados.',
       icon: 'donation'
     },
     {
       id: 5,
-      title: 'Modernização Administrativa',
-      description: 'Digitalização de processos e desburocratização da máquina pública, tornando os serviços governamentais mais eficientes e acessíveis ao cidadão.',
+      title: 'Participação Cidadã',
+      description: 'Demonstração do poder da iniciativa popular, mostrando que a população pode ser protagonista das mudanças que deseja ver, sem depender apenas de políticos.',
       icon: 'scholarship'
     },
     {
       id: 6,
-      title: 'Controle Social',
-      description: 'Fortalecimento de canais de fiscalização e controle pela sociedade civil, garantindo que o poder público atue sempre em prol do interesse coletivo.',
+      title: 'Superação da Polarização',
+      description: 'Uma causa que une a população além de divisões políticas entre esquerda e direita, focando no bem-estar das crianças de Fortaleza.',
       icon: 'social-control'
     }
   ]

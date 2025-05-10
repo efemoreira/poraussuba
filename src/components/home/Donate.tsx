@@ -30,11 +30,37 @@ const DonateSection = ({ data = defaultData }: DonateSectionProps) => {
     setFormData(prev => ({ ...prev, [id]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aqui você implementaria a lógica para enviar os dados do formulário
-    console.log('Dados do formulário:', formData, 'Opção selecionada:', selectedOption, 'Termos aceitos:', termsAccepted);
-    alert('Assinatura registrada com sucesso!');
+    const payload = {
+      nome: formData.nome,
+      email: formData.email,
+      telefone: formData.telefone,
+      endereco: formData.endereco,
+      bairro: formData.bairro,
+      cidade: formData.cidade,
+      estado: formData.estado,
+      opcaoAssinatura: selectedOption,
+      termosAceitos: termsAccepted,
+    };
+
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwUWT9I2jH4KmXXyPFohGxdBHpM3ztWNHkZ0O7tNY5fWKPcYvkxwcv2oePrJIhdbXwy/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+      if (result.status === 'success') {
+        alert('Dados enviados com sucesso!');
+      } else {
+        alert('Erro ao enviar os dados: ' + result.message);
+      }
+    } catch (error) {
+      console.error('Erro:', error);
+      alert('Erro ao enviar os dados.');
+    }
   };
 
   const calculatePercentage = (current: number, target: number) => {
@@ -81,7 +107,7 @@ const DonateSection = ({ data = defaultData }: DonateSectionProps) => {
             <div className="mt-8">
               <div className="mb-4">
                 <h3 className="text-xl text-white font-semibold mb-2">Progresso da Campanha</h3>
-                <div className="relative h-[15px] bg-gray-700 rounded-sm overflow-visible mb-2">
+                <div className="relative h-[15px] bg-gray-700 rounded-sm overflow-visible mb-2 mt-8">
                   <div 
                     className="absolute h-full bg-primary" 
                     style={{ width: `${calculatePercentage(data.currentSignatures, data.signatureGoal)}%` }}

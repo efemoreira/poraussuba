@@ -21,26 +21,26 @@ export interface VolunteerData {
 
 export const volunteerData: VolunteerData = {
   title: 'Seja Voluntário',
-  subtitle: 'Faça a diferença sendo um voluntário hoje',
+  subtitle: 'Ajude a coletar as 88.500 assinaturas para protocolamos nossa lei popular',
   description: [
-    'Nossos voluntários são a espinha dorsal da nossa organização. Seja ajudando em eventos, participando de ações sociais, oferecendo serviços profissionais ou contribuindo com seu tempo e talento, cada voluntário é fundamental para ampliarmos nosso alcance e impacto.',
-    'Junte-se a nós e faça parte de uma rede de pessoas comprometidas em transformar vidas. Você pode dedicar apenas algumas horas por semana ou se envolver em projetos específicos de acordo com sua disponibilidade e habilidades.',
-    'Preencha o formulário ao lado para se cadastrar como voluntário, e entraremos em contato para conversar sobre as melhores formas de você contribuir para nossa missão.'
+    'Voluntários são essenciais para alcançarmos nosso objetivo de 88.500 assinaturas (5% dos eleitores de Fortaleza). Como voluntário, você pode ajudar na coleta de assinaturas, divulgação do projeto e mobilização da população.',
+    'O Poraussuba é uma iniciativa desenvolvida por Felipe Moreira para estabelecer ações mensais de saúde nas escolas públicas municipais, com acompanhamento de nutricionistas, endocrinologistas e outros profissionais para monitorar o desenvolvimento infantil.',
+    'Nossa ação social demonstra que a população não precisa esperar pelos políticos e pode superar a polarização política (esquerda x direita) através de ações concretas. Preencha o formulário para participar dessa transformação em Fortaleza.'
   ],
   formLabels: {
     name: 'Nome Completo',
     email: 'Seu Email',
-    subject: 'Área de Interesse',
+    subject: 'Como deseja colaborar',
     message: 'Mensagem',
-    submit: 'Enviar Cadastro'
+    submit: 'Quero ser voluntário'
   },
   formPlaceholders: {
-    name: 'Nome Completo',
-    email: 'Seu Email',
-    subject: 'Área de Interesse',
-    message: 'Conte-nos sobre você, suas habilidades e disponibilidade'
+    name: 'Seu nome completo',
+    email: 'Seu email de contato',
+    subject: 'Coleta de assinaturas, divulgação etc.',
+    message: 'Conte-nos sobre sua disponibilidade e em qual bairro de Fortaleza você pode atuar'
   },
-  formSuccessMessage: 'Obrigado por se voluntariar! Entraremos em contato em breve.',
+  formSuccessMessage: 'Obrigado por se voluntariar! Entraremos em contato em breve para as próximas etapas.',
   backgroundImage: "/img/volunteer.jpg" 
 };
 

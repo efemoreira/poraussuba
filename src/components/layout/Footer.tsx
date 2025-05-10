@@ -123,11 +123,6 @@ const Footer = ({ data = defaultData }: FooterProps) => {
                   &copy; {currentYear} {data.copyright}
                 </p>
               </div>
-              <div className="md:text-right">
-                <p className="m-0 text-gray-400">
-                  Desenvolvido por <Link href="#" className="text-white hover:text-primary">Dev Team</Link>
-                </p>
-              </div>
             </div>
           </div>
         </div>

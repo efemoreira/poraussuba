@@ -18,9 +18,9 @@ export interface FactsData {
 }
 
 const factsData: FactsData = {
-  sectionTitle: 'Nossa Campanha em Números',
+  sectionTitle: 'Poraussuba em Números',
   sectionSubtitle: 'O Impacto da Nossa Iniciativa',
-  description: 'Nossa campanha de coleta de assinaturas para aprovação da lei está crescendo a cada dia. Confira abaixo alguns números que demonstram a força do nosso movimento e o impacto que estamos tendo em todo o Brasil.',
+  description: 'Nossa campanha de coleta de assinaturas está crescendo cada dia mais. Para protocolar nossa lei de iniciativa popular, precisamos de 88.500 assinaturas, que representam 5% dos eleitores de Fortaleza. Com sua ajuda, podemos transformar a saúde escolar em nossa cidade.',
   imagePath: '/img/facts.jpg',
   buttonText: 'Saiba Mais',
   buttonLink: '/about',
@@ -29,25 +29,25 @@ const factsData: FactsData = {
       id: 1,
       icon: 'fa fa-users',
       count: 12345,
-      title: 'Assinantes',
+      title: 'Apoiadores',
     },
     {
       id: 2,
       icon: 'fa fa-map-marker-alt',
-      count: 345,
-      title: 'Cidades Alcançadas',
+      count: 42,
+      title: 'Bairros Alcançados',
     },
     {
       id: 3,
       icon: 'fa fa-hands-helping',
-      count: 1234,
+      count: 124,
       title: 'Voluntários',
     },
     {
       id: 4,
-      icon: 'fa fa-clock',
-      count: 24,
-      title: 'Horas Diárias de Trabalho',
+      icon: 'fa fa-file-signature',
+      count: 88500,
+      title: 'Assinaturas Necessárias',
     },
   ]
 };

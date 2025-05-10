@@ -20,25 +20,25 @@ export interface TeamData {
 
 const teamData: TeamData = {
   sectionTitle: 'Nossa Equipe',
-  sectionSubtitle: 'Conheça os Líderes da Nossa Iniciativa',
-  description: 'Nossa equipe é formada por especialistas e voluntários dedicados a transformar esta proposta de lei em realidade. Juntos, estamos trabalhando para construir um Brasil mais justo e transparente.',
+  sectionSubtitle: 'Conheça Quem Está Por Trás do Poraussuba',
+  description: 'Nossa equipe é liderada por Felipe Moreira, idealizador do projeto, e composta por profissionais dedicados a transformar a saúde nas escolas públicas de Fortaleza através de uma lei de iniciativa popular.',
   team: [
     {
       id: 1,
-      name: 'Dra. Carolina Mendes',
-      role: 'Coordenadora Jurídica',
+      name: 'Felipe Moreira',
+      role: 'Fundador e Coordenador Geral',
       imagePath: '/img/team-1.jpg',
       socialLinks: {
-        twitter: 'https://twitter.com/',
-        facebook: 'https://facebook.com/',
-        instagram: 'https://instagram.com/',
-        linkedin: 'https://linkedin.com/'
+        twitter: 'https://twitter.com/felipemoreira',
+        facebook: 'https://facebook.com/felipemoreira',
+        instagram: 'https://instagram.com/felipemoreira',
+        linkedin: 'https://linkedin.com/in/felipemoreira'
       }
     },
     {
       id: 2,
-      name: 'Prof. Ricardo Almeida',
-      role: 'Especialista em Políticas Públicas',
+      name: 'Dra. Mariana Costa',
+      role: 'Coordenadora de Saúde',
       imagePath: '/img/team-2.jpg',
       socialLinks: {
         facebook: 'https://facebook.com/',
@@ -48,8 +48,8 @@ const teamData: TeamData = {
     },
     {
       id: 3,
-      name: 'Fernanda Oliveira',
-      role: 'Coordenadora de Mobilização',
+      name: 'Pedro Albuquerque',
+      role: 'Coordenador de Mobilização',
       imagePath: '/img/team-3.jpg',
       socialLinks: {
         twitter: 'https://twitter.com/',
@@ -59,8 +59,8 @@ const teamData: TeamData = {
     },
     {
       id: 4,
-      name: 'Dr. Marcos Santos',
-      role: 'Assessor Legislativo',
+      name: 'Dra. Luciana Matos',
+      role: 'Assessora Jurídica',
       imagePath: '/img/team-4.jpg',
       socialLinks: {
         twitter: 'https://twitter.com/',
