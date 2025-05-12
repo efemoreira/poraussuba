@@ -27,8 +27,8 @@ const carouselData: CarouselData = {
       subtitle: 'Nós temos o poder de mudar as coisas.',
       description: 'Com 5% dos eleitores, podemos apresentar uma lei para cuidar das nossas crianças. A cidade não precisa esperar por políticos – ela precisa de você.',
       buttons: [
-        { buttonText: 'Entenda Sobre', buttonLink: '/donate' },
-        { buttonText: 'Quero Assinar', buttonLink: '/volunteer' },
+        { buttonText: 'Entenda Sobre', buttonLink: '#about' },
+        { buttonText: 'Quero Assinar', buttonLink: '#assinar' },
       ],
     },
     {
@@ -38,8 +38,8 @@ const carouselData: CarouselData = {
       subtitle: 'Uma vez por mês, toda criança da cidade pode ser cuidada.',
       description: 'Com uma lei de iniciativa popular, garantimos acompanhamento médico, educação em saúde e mais futuro para elas.',
       buttons: [
-        { buttonText: 'Conheça a Lei', buttonLink: '/donate' },
-        { buttonText: 'Quero Assinar', buttonLink: '/volunteer' },
+        { buttonText: 'Conheça a Lei', buttonLink: '#services' },
+        { buttonText: 'Quero Assinar', buttonLink: '#assinar' },
       ],
     },
     {
@@ -49,8 +49,8 @@ const carouselData: CarouselData = {
       subtitle: 'O ódio e a divisão não nos definem.',
       description: 'Vamos mostrar que o senso de comunidade é maior do que qualquer ideologia. Se 89 mil se unirem, criamos juntos uma lei de verdade.',
       buttons: [
-        { buttonText: 'Faça Parte', buttonLink: '/donate' },
-        { buttonText: 'Quero Assinar', buttonLink: '/volunteer' },
+        { buttonText: 'Faça Parte', buttonLink: '#assinar' },
+        { buttonText: 'Quero Assinar', buttonLink: '#assinar' },
       ],
     },
   ],

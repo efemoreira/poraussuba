@@ -36,18 +36,14 @@ const donateData: DonateData = {
   submitButtonText: 'Cadastrar Assinatura',
   termsText: 'Ao assinar, concordo com os termos de uso e política de privacidade. Sou eleitor(a) em Fortaleza e confirmo que os dados informados são verdadeiros.',
   signatureOptions: [
-    // {
-    //   label: 'Pré-cadastro Online',
-    //   description: 'Preencha seus dados para facilitar a coleta da sua assinatura física posteriormente'
-    // },
-    // {
-    //   label: 'Ponto de Coleta',
-    //   description: 'Visite um dos nossos pontos de coleta em Fortaleza para assinar presencialmente'
-    // },
-    // {
-    //   label: 'Voluntário Coletor',
-    //   description: 'Solicite que um voluntário vá até você para coletar sua assinatura'
-    // }
+    {
+      label: 'Sim',
+      description: 'Preencha seus dados para facilitar a coleta da sua assinatura física posteriormente'
+    },
+    {
+      label: 'Não',
+      description: 'Preencha seus dados para ações futuras de mobilização e coleta de assinaturas'
+    }
   ],
   personalInfoFields: [
     {

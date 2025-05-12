@@ -87,13 +87,13 @@ const HowItWorks = () => {
 
         <div className="flex justify-center mt-8 gap-4">
           <Link 
-            href="/cadastro" 
+            href="#assinar" 
             className="px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-all duration-300"
           >
             Cadastre-se
           </Link>
           <Link 
-            href="/compartilhar" 
+            href="https://www.instagram.com/poraussuba/" 
             className="px-6 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-300"
           >
             Compartilhe

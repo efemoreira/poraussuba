@@ -51,7 +51,7 @@ const aboutData: AboutData = {
     'O povo pode e deve ser protagonista das mudanças sociais que deseja ver',
   ],
   buttonText: 'Saiba Mais',
-  buttonLink: '/about'
+  buttonLink: '#how-it-works',
 };
 
 export default aboutData;

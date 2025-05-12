@@ -32,16 +32,19 @@ export default function Home() {
       <Carousel 
         // data={carouselData} 
       />
-      <AboutSection 
-        // data={aboutData}
-      />
-      <HowItWorks />
-      <ServicesSection 
-        // data={servicesData}
-      />
-      <DonateSection 
-        // data={donateData}
-      />
+      <div id="about" className="w-full">
+        <AboutSection />
+      </div>
+      <div id='how-it-works' className="w-full">
+        <HowItWorks />
+      </div>
+      <div id="services" className="w-full">
+        <ServicesSection />
+      </div>
+      <div id="assinar" className="w-full ">
+        <DonateSection />
+      </div>
+      
       {/* <CausesSection 
         // data={causesData}
       />

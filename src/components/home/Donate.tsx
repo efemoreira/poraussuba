@@ -10,8 +10,17 @@ interface DonateSectionProps {
 }
 
 const DonateSection = ({ data = defaultData }: DonateSectionProps) => {
-  // const [selectedOption, setSelectedOption] = useState('Assinatura Digital');
-  const [formData, setFormData] = useState<Record<string, string>>({});
+  // Possui titulo de eleito com base em Fortaleza SIM/NÃO
+  const [selectedOption, setSelectedOption] = useState('Sim');
+  const [formData, setFormData] = useState<Record<string, string>>({
+    nome: '',
+    email: '',
+    telefone: '',
+    endereco: '',
+    bairro: '',
+    cidade: 'Fortaleza',
+    estado: 'Ceará',
+  });
   // const [termsAccepted, setTermsAccepted] = useState(false);
   
   // Referência para a seção de parallax
@@ -40,6 +49,7 @@ const DonateSection = ({ data = defaultData }: DonateSectionProps) => {
       bairro: formData.bairro,
       cidade: formData.cidade,
       estado: formData.estado,
+      selectedOption: selectedOption,
     };
 
     const Url = 'https://script.google.com/macros/s/AKfycbybNMg4mk1U1IXSMEgun2WgDthDl-kOFe3afsR1GrJ9Z5oHIvVfWdz5wGfPzlKuzv2f/exec';
@@ -63,11 +73,11 @@ const DonateSection = ({ data = defaultData }: DonateSectionProps) => {
       telefone: '',
       endereco: '',
       bairro: '',
-      cidade: '',
-      estado: '',
+      cidade: 'Fortaleza',
+      estado: 'Ceará',
     });
     // setTermsAccepted(false);
-    // setSelectedOption('Assinatura Digital');
+    setSelectedOption('Sim');
     alert('Obrigado por assinar! Sua assinatura foi registrada com sucesso.');
 
   };
@@ -142,10 +152,10 @@ const DonateSection = ({ data = defaultData }: DonateSectionProps) => {
             className="py-[45px] px-[30px] bg-primary"
           >
             <h3 className="text-2xl font-bold text-dark mb-6">{data.formTitle}</h3>
-            
+
             {/* Signature Options */}
-            {/* <div className="mb-6">
-              <p className="font-semibold text-gray-700 mb-3">Como você deseja assinar?</p>
+            <div className="mb-6">
+              <p className="font-semibold text-gray-700 mb-3">Possui título de eleitor com base em Fortaleza?</p>
               <div className="space-y-3">
                 {data.signatureOptions.map((option, index) => (
                   <div key={index} className="flex items-start">
@@ -164,7 +174,7 @@ const DonateSection = ({ data = defaultData }: DonateSectionProps) => {
                   </div>
                 ))}
               </div>
-            </div> */}
+            </div>
             
             <form onSubmit={handleSubmit}>
               {/* Personal Info Fields */}
