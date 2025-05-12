@@ -51,7 +51,7 @@ const DonateSection = ({ data = defaultData }: DonateSectionProps) => {
         headers: {  'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify(payload),
       });
-      
+      console.log('Dados enviados com sucesso!', response);
     } catch (error) {
       console.log('Erro ao enviar os dados. ' + error);
     }

@@ -3,14 +3,14 @@ import Carousel from '@/components/home/Carousel';
 import AboutSection from '@/components/home/About';
 import ServicesSection from '@/components/home/Services';
 import DonateSection from '@/components/home/Donate';
-import CausesSection from '@/components/home/Causes';
-import FactsSection from '@/components/home/Facts';
-import TeamSection from '@/components/home/Team';
-import TestimonialSection from '@/components/home/Testimonial';
-import VolunteerSection from '@/components/home/Volunteer';
-import EventSection from '@/components/home/Event';
-import BlogSection from '@/components/home/Blog';
-import Newsletter from '@/components/home/Newsletter';
+// import CausesSection from '@/components/home/Causes';
+// import FactsSection from '@/components/home/Facts';
+// import TeamSection from '@/components/home/Team';
+// import TestimonialSection from '@/components/home/Testimonial';
+// import VolunteerSection from '@/components/home/Volunteer';
+// import EventSection from '@/components/home/Event';
+// import BlogSection from '@/components/home/Blog';
+// import Newsletter from '@/components/home/Newsletter';
 import HowItWorks from '@/components/home/HowItWorks';
 
 // Importe seus dados personalizados para substituir os dados padrão
