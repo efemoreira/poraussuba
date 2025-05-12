@@ -54,13 +54,6 @@ const donateData: DonateData = {
       required: true
     },
     {
-      id: 'email',
-      label: 'Email',
-      type: 'email',
-      placeholder: 'Digite seu email para contato',
-      required: true
-    },
-    {
       id: 'telefone',
       label: 'Telefone/WhatsApp',
       type: 'tel',

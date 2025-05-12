@@ -30,14 +30,14 @@ const TopBar = ({ data = defaultData }: TopBarProps) => {
         <div className="flex justify-between items-center h-full">
           {/* Top Bar Left */}
           <div className="flex items-center justify-start">
-            <div className="flex items-center justify-center h-[45px] px-[10px] text-center border-l border-white/30">
+            {/* <div className="flex items-center justify-center h-[45px] px-[10px] text-center border-l border-white/30">
               <FaPhone className="text-primary mr-[5px] text-base" />
               <p className="text-white text-base font-medium m-0">{data.contactInfo.phone}</p>
             </div>
             <div className="flex items-center justify-center h-[45px] px-[10px] text-center border-l border-white/30">
               <FaEnvelope className="text-primary mr-[5px] text-base" />
               <p className="text-white text-base font-medium m-0">{data.contactInfo.email}</p>
-            </div>
+            </div> */}
           </div>
           
           {/* Top Bar Right */}

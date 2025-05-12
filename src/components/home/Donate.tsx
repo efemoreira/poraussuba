@@ -10,11 +10,9 @@ interface DonateSectionProps {
 }
 
 const DonateSection = ({ data = defaultData }: DonateSectionProps) => {
-  // Possui titulo de eleito com base em Fortaleza SIM/NÃO
   const [selectedOption, setSelectedOption] = useState('Sim');
   const [formData, setFormData] = useState<Record<string, string>>({
     nome: '',
-    email: '',
     telefone: '',
     endereco: '',
     bairro: '',
@@ -43,16 +41,15 @@ const DonateSection = ({ data = defaultData }: DonateSectionProps) => {
     e.preventDefault();
     const payload = {
       nome: formData.nome,
-      email: formData.email,
       telefone: formData.telefone,
       endereco: formData.endereco,
       bairro: formData.bairro,
       cidade: formData.cidade,
       estado: formData.estado,
-      selectedOption: selectedOption,
+      opcaoAssinatura: selectedOption,
     };
 
-    const Url = 'https://script.google.com/macros/s/AKfycbybNMg4mk1U1IXSMEgun2WgDthDl-kOFe3afsR1GrJ9Z5oHIvVfWdz5wGfPzlKuzv2f/exec';
+    const Url = 'https://script.google.com/macros/s/AKfycbwohBVliHz9qXsU_IfnqYOIfAJZ0zVlEMFC_u8L5UFAojW7QCsZIeifoIJbM23q60do/exec';
 
     try {
       const response = await fetch(Url, {
@@ -69,12 +66,11 @@ const DonateSection = ({ data = defaultData }: DonateSectionProps) => {
     // Reset form data
     setFormData({
       nome: '',
-      email: '',
       telefone: '',
       endereco: '',
       bairro: '',
       cidade: 'Fortaleza',
-      estado: 'Ceará',
+      estado: 'Ceará'
     });
     // setTermsAccepted(false);
     setSelectedOption('Sim');
