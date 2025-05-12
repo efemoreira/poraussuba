@@ -33,7 +33,7 @@ const footerData: FooterData = {
   contactInfo: {
     address: "Fortaleza - Ceará",
     phone: "+55 (85) 98765-4321",
-    email: "contato@poraussuba.org.br"
+    email: "contato@poraussuba.com.br"
   },
   columns: [
     {
@@ -61,7 +61,7 @@ const footerData: FooterData = {
     { id: 1, platform: "Facebook", url: "https://facebook.com/poraussuba", icon: "FaFacebookF" },
     { id: 2, platform: "Twitter", url: "https://twitter.com/poraussuba", icon: "FaTwitter" },
     { id: 3, platform: "Instagram", url: "https://instagram.com/poraussuba", icon: "FaInstagram" },
-    { id: 4, platform: "YouTube", url: "https://youtube.com/poraussuba", icon: "FaYoutube" }
+    { id: 4, platform: "YouTube", url: "https://youtube.com/@poraussuba", icon: "FaYoutube" }
   ],
   copyright: "© Poraussuba 2025. Desenvolvido por Felipe Moreira."
 };

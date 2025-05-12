@@ -61,9 +61,31 @@ const Footer = ({ data = defaultData }: FooterProps) => {
               ))}
             </div>
           </div>
+          
+          <div className="mb-[45px]">
+          </div>
+
+          {/* Footer Social */}
+          <div className="mb-[45px]">
+            <h2 className="mb-[30px] text-xl font-bold text-primary">Siga-nos</h2>
+            <div className="flex flex-col">
+              {data.socialLinks.map((link) => (
+                <Link 
+                  key={link.id}
+                  href={link.url} 
+                  className="mb-2.5 text-white hover:text-primary hover:tracking-wider transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaAngleRight className="inline-block mr-2" />
+                  {link.platform}
+                </Link>
+              ))}
+            </div>
+          </div>
 
           {/* Footer Columns */}
-          {data.columns.map((column, index) => (
+          {/* {data.columns.map((column, index) => (
             <div className="mb-[45px]" key={index}>
               <h2 className="mb-[30px] text-xl font-bold text-primary">{column.title}</h2>
               <div className="flex flex-col">
@@ -79,10 +101,10 @@ const Footer = ({ data = defaultData }: FooterProps) => {
                 ))}
               </div>
             </div>
-          ))}
+          ))} */}
 
           {/* Footer Newsletter */}
-          <div className="mb-[45px]">
+          {/* <div className="mb-[45px]">
             <h2 className="mb-[30px] text-xl font-bold text-primary">Newsletter</h2>
             <p className="text-white mb-6">
               {data.description}
@@ -110,7 +132,7 @@ const Footer = ({ data = defaultData }: FooterProps) => {
                 </label>
               </div>
             </form>
-          </div>
+          </div> */}
         </div>
       </div>
 

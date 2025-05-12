@@ -10,9 +10,9 @@ interface DonateSectionProps {
 }
 
 const DonateSection = ({ data = defaultData }: DonateSectionProps) => {
-  const [selectedOption, setSelectedOption] = useState('Assinatura Digital');
+  // const [selectedOption, setSelectedOption] = useState('Assinatura Digital');
   const [formData, setFormData] = useState<Record<string, string>>({});
-  const [termsAccepted, setTermsAccepted] = useState(false);
+  // const [termsAccepted, setTermsAccepted] = useState(false);
   
   // Referência para a seção de parallax
   const sectionRef = useRef(null);
@@ -40,27 +40,36 @@ const DonateSection = ({ data = defaultData }: DonateSectionProps) => {
       bairro: formData.bairro,
       cidade: formData.cidade,
       estado: formData.estado,
-      opcaoAssinatura: selectedOption,
-      termosAceitos: termsAccepted,
     };
 
+    const Url = 'https://script.google.com/macros/s/AKfycbybNMg4mk1U1IXSMEgun2WgDthDl-kOFe3afsR1GrJ9Z5oHIvVfWdz5wGfPzlKuzv2f/exec';
+
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbwUWT9I2jH4KmXXyPFohGxdBHpM3ztWNHkZ0O7tNY5fWKPcYvkxwcv2oePrJIhdbXwy/exec', {
+      const response = await fetch(Url, {
+        redirect: "follow",
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {  'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify(payload),
       });
-
-      const result = await response.json();
-      if (result.status === 'success') {
-        alert('Dados enviados com sucesso!');
-      } else {
-        alert('Erro ao enviar os dados: ' + result.message);
-      }
+      
     } catch (error) {
-      console.error('Erro:', error);
-      alert('Erro ao enviar os dados.');
+      console.log('Erro ao enviar os dados. ' + error);
     }
+
+    // Reset form data
+    setFormData({
+      nome: '',
+      email: '',
+      telefone: '',
+      endereco: '',
+      bairro: '',
+      cidade: '',
+      estado: '',
+    });
+    // setTermsAccepted(false);
+    // setSelectedOption('Assinatura Digital');
+    alert('Obrigado por assinar! Sua assinatura foi registrada com sucesso.');
+
   };
 
   const calculatePercentage = (current: number, target: number) => {
@@ -135,7 +144,7 @@ const DonateSection = ({ data = defaultData }: DonateSectionProps) => {
             <h3 className="text-2xl font-bold text-dark mb-6">{data.formTitle}</h3>
             
             {/* Signature Options */}
-            <div className="mb-6">
+            {/* <div className="mb-6">
               <p className="font-semibold text-gray-700 mb-3">Como você deseja assinar?</p>
               <div className="space-y-3">
                 {data.signatureOptions.map((option, index) => (
@@ -155,7 +164,7 @@ const DonateSection = ({ data = defaultData }: DonateSectionProps) => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
             
             <form onSubmit={handleSubmit}>
               {/* Personal Info Fields */}
@@ -171,13 +180,14 @@ const DonateSection = ({ data = defaultData }: DonateSectionProps) => {
                     className="w-full h-[45px] p-3 bg-transparent border border-dark/50 focus:border-dark focus:outline-none" 
                     placeholder={field.placeholder}
                     required={field.required}
+                    value={formData[field.id] || ''}
                     onChange={(e) => handleInputChange(field.id, e.target.value)}
                   />
                 </div>
               ))}
               
               {/* Terms Checkbox */}
-              <div className="mb-6">
+              {/* <div className="mb-6">
                 <div className="flex items-start">
                   <input
                     type="checkbox"
@@ -189,7 +199,7 @@ const DonateSection = ({ data = defaultData }: DonateSectionProps) => {
                   />
                   <label htmlFor="terms" className="text-sm">{data.termsText}</label>
                 </div>
-              </div>
+              </div> */}
               
               {/* Submit Button */}
               <button 

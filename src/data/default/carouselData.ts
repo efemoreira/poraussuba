@@ -4,6 +4,10 @@ export interface CarouselSlide {
   title: string;
   subtitle: string;
   description: string;
+  buttons: CarouselButton[];
+}
+
+export interface CarouselButton {
   buttonText: string;
   buttonLink: string;
 }
@@ -19,33 +23,39 @@ const carouselData: CarouselData = {
     {
       id: 1,
       imagePath: '/img/carousel-1.jpg',
-      title: 'Saúde nas Escolas de Fortaleza',
-      subtitle: 'Uma iniciativa popular por nossas crianças',
-      description: 'Precisamos de 88.500 assinaturas para protocolar nossa lei de iniciativa popular',
-      buttonText: 'Participe Agora',
-      buttonLink: '/donate',
+      title: 'Juntos, fazemos a cidade funcionar',
+      subtitle: 'Nós temos o poder de mudar as coisas.',
+      description: 'Com 5% dos eleitores, podemos apresentar uma lei para cuidar das nossas crianças. A cidade não precisa esperar por políticos – ela precisa de você.',
+      buttons: [
+        { buttonText: 'Entenda Sobre', buttonLink: '/donate' },
+        { buttonText: 'Quero Assinar', buttonLink: '/volunteer' },
+      ],
     },
     {
       id: 2,
       imagePath: '/img/carousel-2.jpg',
-      title: 'O Poder está nas Mãos do Povo',
-      subtitle: '5% dos eleitores podem mudar Fortaleza',
-      description: 'Juntos podemos garantir acompanhamento médico mensal nas escolas públicas municipais',
-      buttonText: 'Saiba Mais',
-      buttonLink: '/causes',
+      title: 'Nossas crianças merecem cuidado',
+      subtitle: 'Uma vez por mês, toda criança da cidade pode ser cuidada.',
+      description: 'Com uma lei de iniciativa popular, garantimos acompanhamento médico, educação em saúde e mais futuro para elas.',
+      buttons: [
+        { buttonText: 'Conheça a Lei', buttonLink: '/donate' },
+        { buttonText: 'Quero Assinar', buttonLink: '/volunteer' },
+      ],
     },
     {
       id: 3,
       imagePath: '/img/carousel-3.jpg',
-      title: 'Por um Futuro Mais Saudável',
-      subtitle: 'Nutricionistas e Endocrinologistas nas Escolas',
-      description: 'Acompanhamento médico regular para o desenvolvimento saudável das crianças de Fortaleza',
-      buttonText: 'Como Funciona',
-      buttonLink: '/volunteer',
-    }
+      title: 'Desafio Popular: Somos mais fortes que a indiferença',
+      subtitle: 'O ódio e a divisão não nos definem.',
+      description: 'Vamos mostrar que o senso de comunidade é maior do que qualquer ideologia. Se 89 mil se unirem, criamos juntos uma lei de verdade.',
+      buttons: [
+        { buttonText: 'Faça Parte', buttonLink: '/donate' },
+        { buttonText: 'Quero Assinar', buttonLink: '/volunteer' },
+      ],
+    },
   ],
   autoplay: true,
-  delay: 5000
+  delay: 10000
 };
 
 export default carouselData;

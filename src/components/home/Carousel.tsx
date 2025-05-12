@@ -17,16 +17,13 @@ interface CarouselProps {
 }
 
 const Carousel = ({ data = defaultData }: CarouselProps) => {
+  
   return (
     <div className="relative w-full min-h-[300px] md:min-h-[500px] lg:min-h-[700px] mb-[45px] bg-white">
       <div className="w-full h-full">
         <Swiper
           modules={[Navigation, Autoplay, EffectFade]}
           effect="fade"   
-          navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          }}
           autoplay={data.autoplay ? {
             delay: data.delay,
             disableOnInteraction: false,
@@ -53,7 +50,7 @@ const Carousel = ({ data = defaultData }: CarouselProps) => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.3 }}
-                    className="text-center text-white text-3xl md:text-4xl lg:text-[60px] font-bold mb-5"
+                    className="text-center text-white text-3xl md:text-4xl lg:text-[60px] font-bold mb-2"
                   >
                     {slide.title}
                   </motion.h1>
@@ -61,7 +58,7 @@ const Carousel = ({ data = defaultData }: CarouselProps) => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="text-white text-center text-base md:text-lg lg:text-xl mb-3"
+                    className="text-primary text-center text-base md:text-lg lg:text-xl mb-6"
                   >
                     {slide.subtitle}
                   </motion.p>
@@ -76,31 +73,23 @@ const Carousel = ({ data = defaultData }: CarouselProps) => {
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.7 }}
-                    className="flex gap-4"
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    className="flex flex-row gap-4 mb-4"
                   >
-                    <Link 
-                      href={slide.buttonLink} 
-                      className="px-6 py-3 text-white border-2 border-primary bg-transparent hover:bg-primary hover:text-dark transition duration-300 font-medium"
-                    >
-                      {slide.buttonText}
-                    </Link>
+                    {slide.buttons.map((button, index) => (
+                      <Link 
+                        key={index} 
+                        href={button.buttonLink} 
+                        className="px-6 py-3 text-white border-2 border-primary bg-transparent hover:bg-primary hover:text-dark transition duration-300 font-medium"
+                      >
+                        {button.buttonText}
+                      </Link>
+                    ))}
                   </motion.div>
                 </div>
               </div>
             </SwiperSlide>
           ))}
-          
-          <div className="swiper-button-next absolute w-[60px] h-[60px] flex items-center justify-center text-primary bg-white/20 hover:bg-primary hover:text-white transition-all duration-300 top-1/2 right-0 -translate-y-1/2 z-10">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-            </svg>
-          </div>
-          <div className="absolute w-[60px] h-[60px] flex items-center justify-center text-primary bg-white/20 hover:bg-primary hover:text-white transition-all duration-300 top-1/2 left-0 -translate-y-1/2 z-10">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-            </svg>
-          </div>
         </Swiper>
       </div>
     </div>

@@ -63,7 +63,7 @@ const contactFormData: ContactFormData = {
   contactInfo: {
     address: "Fortaleza - CE",
     phone: "+55 (85) 98765-4321",
-    email: "contato@poraussuba.org.br",
+    email: "contato@poraussuba.com.br",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.3315145329714!2d-38.52429689999999!3d-3.7304306999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74991004f379d%3A0x39a24830740b787c!2sPra%C3%A7a%20do%20Ferreira%2C%20Fortaleza%20-%20CE!5e0!3m2!1spt-BR!2sbr!4v1651491186400!5m2!1spt-BR!2sbr"
   }
 };

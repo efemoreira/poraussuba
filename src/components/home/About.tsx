@@ -17,7 +17,7 @@ interface AboutSectionProps {
 // Componente para exibir os itens de conquistas
 const AchievementsList = ({ achievements, achievementTitle }: { achievementTitle: string; achievements: string[] }) => (
   <div className="mt-8">
-    <p className="font-medium mb-4">
+    <p className="font-medium mb-4 text-primary text-xl">
       {achievementTitle}
     </p>
     <ul className="space-y-2">

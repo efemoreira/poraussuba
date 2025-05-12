@@ -21,43 +21,34 @@ export interface AboutData {
 
 const aboutData: AboutData = {
   title: 'Sobre Nós',
-  subtitle: 'Uma iniciativa popular por melhor saúde nas escolas de Fortaleza',
+  subtitle: 'Poder para transformar sua cidade',
   imagePath: '/img/about.jpg',
   imageAlt: 'Sobre o projeto Poraussuba',
   tabs: {
-    'Nossa Missão': [
+    'O Início': [
       {
         id: 1,
-        content: `Nossa missão é mobilizar os cidadãos de Fortaleza para aprovar uma lei de iniciativa popular que 
-                estabeleça a realização mensal de ações de saúde nas escolas públicas municipais. Queremos demonstrar 
-                que a população tem força para criar mudanças sem depender exclusivamente de políticos.`,
+        content: `Somos um movimento cidadão que nasce do desejo de reunir pessoas comuns para criar soluções reais. Poraussuba nasceu da ideia simples de que a população tem poder para transformar sua cidade — sem esperar por eleições ou promessas políticas.`,
       },
     ],
     'Nossa Visão': [
       {
         id: 1,
-        content: `Buscamos uma Fortaleza onde as crianças recebam acompanhamento médico regular nas escolas, 
-                com nutricionistas, endocrinologistas e outros profissionais de saúde monitorando seu desenvolvimento. 
-                Acreditamos que esta iniciativa pode transcender disputas políticas entre esquerda e direita, 
-                unindo a população em torno do bem-estar infantil.`,
+        content: `Nós acreditamos na força da comunidade, na participação direta e na capacidade que cada pessoa tem de fazer parte da mudança, mostrando que o povo pode fazer política com propósito, superando divisões ideológicas e fortalecendo o senso de comunidade.`,
       },
     ],
-    'Nossos Valores': [
+    'Nossa Missão': [
       {
         id: 1,
-        content: `Nossos valores fundamentais incluem participação cidadã, transparência no processo democrático, 
-                cuidado com a saúde infantil, e a crença de que o povo pode e deve ser protagonista das mudanças 
-                sociais que deseja ver. Rejeitamos o populismo e as polarizações políticas em favor da ação direta 
-                e colaborativa.`,
+        content: `Mobilizar a população para transformar a realidade local por meio da criação de leis de iniciativa popular que atendam às necessidades coletivas, com foco no cuidado, na justiça e na participação cidadã. Transformando a cidade por meio da participação direta da população na criação de leis.`,
       },
     ],
   },
-  achievementTitle: 'Nosso Progresso',
+  achievementTitle: 'Nosso Valores',
   achievements: [
-    'Projeto de lei estruturado e validado juridicamente',
-    'Plataforma de mobilização digital desenvolvida',
-    'Parcerias com profissionais de saúde estabelecidas',
-    'Rede de voluntários em formação'
+    'Participação cidadã',
+    'Transparência no processo democrático',
+    'O povo pode e deve ser protagonista das mudanças sociais que deseja ver',
   ],
   buttonText: 'Saiba Mais',
   buttonLink: '/about'

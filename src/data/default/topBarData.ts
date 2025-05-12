@@ -18,7 +18,7 @@ export interface TopBarData {
 
 const topBarData: TopBarData = {
   contactInfo: {
-    email: "contato@poraussuba.org.br",
+    email: "contato@poraussuba.com.br",
     phone: "+55 85 98765-4321",
     address: "Fortaleza, Ceará"
   },
@@ -44,7 +44,7 @@ const topBarData: TopBarData = {
     {
       id: 5,
       platform: "YouTube",
-      url: "https://youtube.com/poraussuba",
+      url: "https://youtube.com/@poraussuba",
       icon: "FaYoutube"
     }
   ]

@@ -11,6 +11,7 @@ import VolunteerSection from '@/components/home/Volunteer';
 import EventSection from '@/components/home/Event';
 import BlogSection from '@/components/home/Blog';
 import Newsletter from '@/components/home/Newsletter';
+import HowItWorks from '@/components/home/HowItWorks';
 
 // Importe seus dados personalizados para substituir os dados padrão
 // import aboutData from '@/data/petitionCampaign/aboutData';
@@ -34,13 +35,14 @@ export default function Home() {
       <AboutSection 
         // data={aboutData}
       />
+      <HowItWorks />
       <ServicesSection 
         // data={servicesData}
       />
       <DonateSection 
         // data={donateData}
       />
-      <CausesSection 
+      {/* <CausesSection 
         // data={causesData}
       />
       <FactsSection 
@@ -63,7 +65,7 @@ export default function Home() {
       />
       <Newsletter 
         // data={newsletterData}
-      />
+      /> */}
     </MainLayout>
   );
 }

@@ -22,30 +22,32 @@ export interface DonateData {
   }[];
 }
 
+// Description: Deve focar em como funciona o processo de assinatura que é ter 5% dos eleitores de Fortaleza, ou seja, 89.000 assinaturas. O formulário deve ser simples e direto, com campos obrigatórios para nome completo, email, telefone/whatsapp, endereço completo, bairro, cidade e estado.
+
 const donateData: DonateData = {
-  sectionTitle: 'Assine Nossa Petição',
-  sectionSubtitle: 'Sua Assinatura por Saúde nas Escolas de Fortaleza',
-  description: 'O projeto Poraussuba, idealizado por Felipe Moreira, busca protocolar uma lei de iniciativa popular que estabelece a realização de ações mensais de saúde nas escolas públicas de Fortaleza, garantindo o acompanhamento de nutricionistas, endocrinologistas e outros profissionais para monitorar o desenvolvimento das crianças. Precisamos de 88.500 assinaturas (5% dos eleitores de Fortaleza) para protocolar esta proposta na Câmara Municipal. Ao assinar, você ajuda a mostrar que o povo não precisa esperar pelos políticos e pode superar a polarização entre esquerda e direita através da participação cidadã direta.',
+  sectionTitle: 'Cadastre-se para Assinar',
+  sectionSubtitle: 'Apoie a Iniciativa Popular',
+  description: 'Ajude a coletar assinaturas para a nossa lei de iniciativa popular, para tal a Câmara Municipal de Fortaleza solicita que projeto tenha 5% dos eleitores da cidade, ou seja, 89.000 assinaturas. Por isso, precisamos da sua ajuda! Assine o formulário abaixo e faça parte dessa transformação.',
   imagePath: '/img/donate.jpg',
   imageAlt: 'Formulário de assinatura da petição Poraussuba',
-  formTitle: 'Formulário de Assinatura',
-  signatureGoal: 88500,
-  currentSignatures: 12345,
-  submitButtonText: 'Assinar Petição',
+  formTitle: 'Formulário de cadastro de assinatura',
+  signatureGoal: 89000,
+  currentSignatures: 1,
+  submitButtonText: 'Cadastrar Assinatura',
   termsText: 'Ao assinar, concordo com os termos de uso e política de privacidade. Sou eleitor(a) em Fortaleza e confirmo que os dados informados são verdadeiros.',
   signatureOptions: [
-    {
-      label: 'Pré-cadastro Online',
-      description: 'Preencha seus dados para facilitar a coleta da sua assinatura física posteriormente'
-    },
-    {
-      label: 'Ponto de Coleta',
-      description: 'Visite um dos nossos pontos de coleta em Fortaleza para assinar presencialmente'
-    },
-    {
-      label: 'Voluntário Coletor',
-      description: 'Solicite que um voluntário vá até você para coletar sua assinatura'
-    }
+    // {
+    //   label: 'Pré-cadastro Online',
+    //   description: 'Preencha seus dados para facilitar a coleta da sua assinatura física posteriormente'
+    // },
+    // {
+    //   label: 'Ponto de Coleta',
+    //   description: 'Visite um dos nossos pontos de coleta em Fortaleza para assinar presencialmente'
+    // },
+    // {
+    //   label: 'Voluntário Coletor',
+    //   description: 'Solicite que um voluntário vá até você para coletar sua assinatura'
+    // }
   ],
   personalInfoFields: [
     {

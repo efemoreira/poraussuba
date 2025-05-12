@@ -33,24 +33,6 @@ const servicesData: ServicesData = {
       description: 'Ações preventivas mensais para identificar problemas de saúde antes que se agravem, garantindo o bem-estar e desenvolvimento adequado das crianças.',
       icon: 'housing'
     },
-    {
-      id: 4,
-      title: 'Saúde Escolar Integral',
-      description: 'Atendimento médico regular dentro do ambiente escolar, facilitando o acesso à saúde e reduzindo a evasão por problemas de saúde não tratados.',
-      icon: 'donation'
-    },
-    {
-      id: 5,
-      title: 'Participação Cidadã',
-      description: 'Demonstração do poder da iniciativa popular, mostrando que a população pode ser protagonista das mudanças que deseja ver, sem depender apenas de políticos.',
-      icon: 'scholarship'
-    },
-    {
-      id: 6,
-      title: 'Superação da Polarização',
-      description: 'Uma causa que une a população além de divisões políticas entre esquerda e direita, focando no bem-estar das crianças de Fortaleza.',
-      icon: 'social-control'
-    }
   ]
 };
 
