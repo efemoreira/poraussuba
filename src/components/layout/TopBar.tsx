@@ -1,6 +1,6 @@
 'use client';
 
-import { FaEnvelope, FaPhone, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import defaultData from '@/data/default/topBarData';
 import type { TopBarData } from '@/data/default/topBarData';
 
