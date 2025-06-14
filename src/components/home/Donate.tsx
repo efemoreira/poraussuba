@@ -49,7 +49,7 @@ const DonateSection = ({ data = defaultData }: DonateSectionProps) => {
       opcaoAssinatura: selectedOption,
     };
 
-    const Url = 'https://script.google.com/macros/s/AKfycbwohBVliHz9qXsU_IfnqYOIfAJZ0zVlEMFC_u8L5UFAojW7QCsZIeifoIJbM23q60do/exec';
+    const Url = 'https://script.google.com/macros/s/AKfycbwWjH5b674yit-V4vQpcGwJFlN4yjSfLTc1uT6GClsGC0sGht5mW1Xw91mgNNKYxsbS/exec';
 
     try {
       const response = await fetch(Url, {
